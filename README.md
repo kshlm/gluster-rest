@@ -10,7 +10,7 @@ and returns the xml output. There is no input validation or proper error
 reporting as yet, but these will come soon.
 
 To install and test, run
-        # go install github.com/kshlm/gluster-rest
+        # go get github.com/kshlm/gluster-rest
 
 This will download, compile and install gluster-rest and dependencies in your
 $GOPATH
