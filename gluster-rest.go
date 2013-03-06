@@ -19,12 +19,10 @@ func (serv GlusterService) Gluster(vars ...string) string {
         args := append(vars, "--xml")
         gCmd := exec.Command("gluster", args...)
         fmt.Print(vars, args, gCmd.Path, gCmd.Args)
-	output, _ := gCmd.CombinedOutput()
-        /*
-	 *if err != nil {
-	 *        return err.Error()
-	 *}
-         */
+	output, err := gCmd.CombinedOutput()
+        if err != nil {
+                return err.Error()
+        }
 	return string(output)
 }
 

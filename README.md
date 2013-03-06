@@ -10,8 +10,19 @@ and returns the xml output. There is no input validation or proper error
 reporting as yet, but these will come soon.
 
 To install and test, run
-        # go get github.com/kshlm/gluster-rest
+        `# go get github.com/kshlm/gluster-rest`
 
 This will download, compile and install gluster-rest and dependencies in your
-$GOPATH
+$GOPATH.
 
+Run `$GOPATH/bin/gluster-rest` as root, to start the server.
+
+The base URI will be "http://localhost:7331/gluster"
+
+To get the list of volumes, you can do a GET request on
+"http://localhost:7331/gluster/volume/list"  
+This will return an xml document containing the list of volumes in the cluster.
+
+To get information regarding a volume do a GET request on
+"http://localhost:7331/gluster/volume/info/<VOLUMENAME>"  
+This will return an xml document containing information on the given volume.
